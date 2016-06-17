@@ -63,7 +63,7 @@
             icony.fillStyle = "red";  //Ball
             icony.fillRect(z,w,10,10);
            
-            
+            var randm,randm1;
             var i=1,time=10;
             var lscore=0,rscore=0;
             var k=setInterval(fn,time);
@@ -82,6 +82,13 @@
                                 i=1;
                                 lscore++;
                                 document.getElementById("left").innerHTML=lscore;
+                                var randm=Math.floor(Math.random() * 400);
+                                iconz.clearRect(u, v, 10, 100);
+                                v=randm;
+                                
+                            
+                            iconz.fillStyle = "green";  //Right
+                            iconz.fillRect(u,v,10,100); 
                                 if(time>1)
                                 {
                                     time=time-0.1;
@@ -117,6 +124,13 @@
                                 i=-1;
                                 rscore++;
                                 document.getElementById("right").innerHTML=rscore;
+                                var randm1=Math.floor(Math.random() * 400);
+                                iconx.clearRect(x, y, 10, 100);
+                                y=randm1;
+                                
+                            
+                            iconx.fillStyle = "blue";  //Right
+                            iconx.fillRect(x,y,10,100);
                             }
                         else
                         {if(lscore>rscore)

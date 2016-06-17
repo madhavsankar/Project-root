@@ -33,7 +33,7 @@
             
             window.addEventListener("keydown", fn1, false);
            var x=100,y=200,z=650,w=240,u=1200,v=200;
-            
+            var randm,randm1;
             var image = new Image();
             image.src = "Tennis-Ball.jpg";
             var icon = document.getElementById("game");
@@ -71,6 +71,13 @@
                                 change=change+((w-y-50)/100);
                                 lscore++;
                                 document.getElementById("left").innerHTML=lscore;
+                                var randm=Math.floor(Math.random() * 400);
+                                iconz.clearRect(u, v, 10, 100);
+                                v=randm;
+                                
+                            
+                            iconz.fillStyle = "green";  //Right
+                            iconz.fillRect(u,v,10,100); 
                                 if(time>1)
                                 {
                                     time=time-0.1;
@@ -95,6 +102,13 @@
                                 change=change+((w-v-50)/100);
                                 lscore++;
                                 document.getElementById("left").innerHTML=lscore;
+                                var randm1=Math.floor(Math.random() * 400);
+                                iconx.clearRect(x, y, 10, 100);
+                                y=randm1;
+                                
+                            
+                            iconx.fillStyle = "blue";  //Left
+                            iconx.fillRect(x,y,10,100); 
                                 if(time>1)
                                 {
                                     time=time-0.1;
