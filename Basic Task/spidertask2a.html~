@@ -1,7 +1,7 @@
 <html>
     <head>
         <style>
-           
+            
             p{
                 font-size:200%; 
                 color:greenyellow; 
@@ -25,7 +25,7 @@
             body
             {
                 background-size: cover;
-                background-image:url("BackgroundSkyFinalLook.jpg");
+                background-image:url("images/BackgroundSkyFinalLook.jpg");
             }
         </style>
     <title>
@@ -37,9 +37,9 @@
     </head>
     <body>
         
-        <p id="score">Score</p>
-        <p id="left" style="text-align:left"></p>
-        <p id="right" style="text-align:right"></p>
+        <p id="score"><strong>Score</strong></p>
+        <p id="left" style="text-align:center"></p>
+        
         
         <canvas id="game" height="500" width="1300" style="border:2px solid #000000;">
         </canvas>
@@ -48,7 +48,7 @@
           
         <script>
             document.getElementById("left").innerHTML=0;
-            document.getElementById("right").innerHTML=0;
+            
             window.addEventListener("keydown", fn1, false);
            var x=100,y=200,z=650,w=250,u=1200,v=200;
             //var i=0;
@@ -65,7 +65,7 @@
            
             var randm,randm1;
             var i=1,time=10;
-            var lscore=0,rscore=0;
+            var lscore=0;
             var k=setInterval(fn,time);
             
                 function fn()
@@ -81,7 +81,6 @@
                             {
                                 i=1;
                                 lscore++;
-                                document.getElementById("left").innerHTML=lscore;
                                 var randm=Math.floor(Math.random() * 400);
                                 iconz.clearRect(u, v, 10, 100);
                                 v=randm;
@@ -89,6 +88,7 @@
                             
                             iconz.fillStyle = "green";  //Right
                             iconz.fillRect(u,v,10,100); 
+                                document.getElementById("left").innerHTML=lscore;
                                 if(time>1)
                                 {
                                     time=time-0.1;
@@ -97,19 +97,7 @@
                                 }
                             }
                         else
-                        {if(lscore>rscore)
-                            {
-                            document.getElementById("score").innerHTML="Blue wins";
-                            }
-                         else if(lscore==rscore)
-                             {
-                                document.getElementById("score").innerHTML="Draw"; 
-                             }
-                         else 
-                             {
-                                document.getElementById("score").innerHTML="Green wins"; 
-                             }
-                            
+                        {document.getElementById("score").innerHTML="GAME OVER";
                             setTimeout(function()
                                         {
                               window.location="start.html";
@@ -122,30 +110,25 @@
                         if((v>150) && (v<255))
                             {
                                 i=-1;
-                                rscore++;
-                                document.getElementById("right").innerHTML=rscore;
+                                lscore++;
                                 var randm1=Math.floor(Math.random() * 400);
                                 iconx.clearRect(x, y, 10, 100);
                                 y=randm1;
                                 
                             
-                            iconx.fillStyle = "blue";  //Right
-                            iconx.fillRect(x,y,10,100);
+                            iconx.fillStyle = "blue";  //Left
+                            iconx.fillRect(x,y,10,100); 
+                                document.getElementById("left").innerHTML=lscore;
+                                if(time>1)
+                                {
+                                    time=time-0.1;
+                                clearInterval(k);
+                                k=setInterval(fn,time);
+                                }
                             }
                         else
-                        {if(lscore>rscore)
-                            {
-                            document.getElementById("score").innerHTML="Blue wins";
-                            }
-                         else if(lscore==rscore)
-                             {
-                                document.getElementById("score").innerHTML="Draw"; 
-                             }
-                         else 
-                             {
-                                document.getElementById("score").innerHTML="Green wins"; 
-                             }
-                           
+                        {
+                            document.getElementById("score").innerHTML="GAME OVER";
                             setTimeout(function()
                                         {
                               window.location="start.html";
