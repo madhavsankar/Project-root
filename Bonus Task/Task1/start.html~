@@ -39,13 +39,13 @@
             }
         </style>
     <title>
-        Ping Pong
+        Spider Pong
         </title>
     </head>
     <body>
-        <h1><strong>PING PONG</strong></h1>
-        <button class="button" onclick="window.location.href='doubleplayer.html'">Double Player</button>
-        <button class="button"><a href="window.location.href='singleplayer.html'">Single Player </a></button>
+        <h1><strong>SPIDER PONG</strong></h1>
+        <button class="button"><a href="physicsa.html">Double Player</a></button>
+        <button class="button"><a href="physics.html">Single Player </a></button>
         <p><strong>EA SPORTS</strong></p>
     </body>
 </html>

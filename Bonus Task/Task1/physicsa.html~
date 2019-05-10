@@ -11,7 +11,7 @@
             
         </style>
     <title>
-        Ping Pong
+        Spider Pong
         </title>
         <style>
            
@@ -50,7 +50,7 @@
            icony.drawImage(image,z,w,30,27);//Ball
             
             var i=1,time=10;
-            var lscore=0,rscore=0,change=0.1;
+            var lscore=0,rscore=0,change=0;
             var k=setInterval(fn,time);
             
                 function fn()
@@ -70,8 +70,9 @@
                         if(((w>=y) && (w-y)<100)||((y>=w) && (y-w)<20))
                             {
                                 i=1;
-                                
+                                change=change+((w-y-50)/100);
                                 lscore++;
+                                document.getElementById("left").innerHTML=lscore;
                                 document.getElementById("left").innerHTML=lscore;
                                 var randm=Math.floor(Math.random() * 400);
                                 iconz.clearRect(u, v, 10, 100);
@@ -103,7 +104,7 @@
                              }
                             setTimeout(function()
                                         {
-                              window.location="start1.html";
+                              window.location="start.html";
                               },3000);
                             clearInterval(k);
                         }
@@ -113,7 +114,7 @@
                         if(((w>=v) && (w-v)<100)||((v>=w) && (v-w)<20))
                             {
                                 i=-1;
-                               
+                                change=change+((w-v-50)/100);
                                 rscore++;
                                 document.getElementById("right").innerHTML=rscore;
                                 var randm1=Math.floor(Math.random() * 400);
@@ -146,7 +147,7 @@
                              }
                             setTimeout(function()
                                         {
-                              window.location="start1.html";
+                              window.location="start.html";
                               },3000);
                             clearInterval(k);
                         }

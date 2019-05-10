@@ -7,11 +7,29 @@
                 color:greenyellow; 
                 text-align:center;
             }
-            
-            
+            .button {
+                padding: 1.5% 3%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 1% 17%;
+                cursor: pointer;
+            }
+
+            .button1 {
+                background-color: white; 
+                color: black; 
+                border: 2px solid #4CAF50;
+            }
+            body
+            {
+                background-size: cover;
+                background-image:url("images/BackgroundSkyFinalLook.jpg");
+            }
         </style>
     <title>
-        Ping Pong
+        Spider Pong
         </title>
         <style>
            
@@ -20,8 +38,7 @@
     <body>
         
         <p id="score"><strong>Score</strong></p>
-        <p id="left" style="text-align:left"></p>
-        <p id="right" style="text-align:right"></p>
+        <p id="left" style="text-align:center"></p>
         
         
         <canvas id="game" height="500" width="1300" style="border:2px solid #000000;">
@@ -31,7 +48,6 @@
           
         <script>
             document.getElementById("left").innerHTML=0;
-            document.getElementById("right").innerHTML=0;
             
             window.addEventListener("keydown", fn1, false);
            var x=100,y=200,z=650,w=240,u=1200,v=200;
@@ -47,15 +63,15 @@
             iconz.fillRect(u,v,10,100);
             var icony = icon.getContext("2d");
             
-           icony.drawImage(image,z,w,30,27);//Ball
+           icony.drawImage(image,z,w,10,10);//Ball
             
             var i=1,time=10;
-            var lscore=0,rscore=0,change=0.1;
+            var lscore=0,change=0.1;
             var k=setInterval(fn,time);
             
                 function fn()
             {   
-                icony.clearRect(z, w, 30, 27);
+                icony.clearRect(z, w, 30,27);
                 z=z+i;
                 w=w+change;
                 icony.drawImage(image,z,w,30,27);
@@ -82,25 +98,13 @@
                             iconz.fillRect(u,v,10,100);
                                 if(time>1)
                                 {
-                                    time=time-0.1;
+                                    time=time-0.3;
                                 clearInterval(k);
                                 k=setInterval(fn,time);
                                 }
                             }
                         else
-                        {
-                            if(lscore>rscore)
-                            {
-                            document.getElementById("score").innerHTML="Blue wins";
-                            }
-                         else if(lscore==rscore)
-                             {
-                                document.getElementById("score").innerHTML="Draw"; 
-                             }
-                         else 
-                             {
-                                document.getElementById("score").innerHTML="Green wins"; 
-                             }
+                        {document.getElementById("score").innerHTML="GAME OVER";
                             setTimeout(function()
                                         {
                               window.location="start1.html";
@@ -113,9 +117,9 @@
                         if(((w>=v) && (w-v)<100)||((v>=w) && (v-w)<20))
                             {
                                 i=-1;
-                               
-                                rscore++;
-                                document.getElementById("right").innerHTML=rscore;
+                                
+                                lscore++;
+                                document.getElementById("left").innerHTML=lscore;
                                 var randm1=Math.floor(Math.random() * 400);
                                 iconx.clearRect(x, y, 10, 100);
                                 y=randm1;
@@ -132,18 +136,7 @@
                             }
                         else
                         {
-                            if(lscore>rscore)
-                            {
-                            document.getElementById("score").innerHTML="Blue wins";
-                            }
-                         else if(lscore==rscore)
-                             {
-                                document.getElementById("score").innerHTML="Draw"; 
-                             }
-                         else 
-                             {
-                                document.getElementById("score").innerHTML="Green wins"; 
-                             }
+                            document.getElementById("score").innerHTML="GAME OVER";
                             setTimeout(function()
                                         {
                               window.location="start1.html";

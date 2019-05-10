@@ -35,17 +35,17 @@
              body
             {
                 background-size: cover;
-                background-image:url("images/25629892-vector-illustration-of-table-tennis-players-Stock-Vector.jpg");
+                background-image:url("25629892-vector-illustration-of-table-tennis-players-Stock-Vector.jpg");
             }
         </style>
     <title>
-        Ping Pong
+        Spider Pong
         </title>
     </head>
     <body>
-        <h1><strong>PING PONG</strong></h1>
-        <button class="button"><a href="physicsa.html">Double Player</a></button>
-        <button class="button"><a href="physics.html">Single Player </a></button>
+        <h1><strong>SPIDER PONG</strong></h1>
+        <button class="button"><a href="phya.html">Double Player</a></button>
+        <button class="button"><a href="phy.html">Single Player </a></button>
         <p><strong>EA SPORTS</strong></p>
     </body>
 </html>
